@@ -1,0 +1,117 @@
+/* Stile generale per il main */
+main {
+    background-color: rgb(255, 255, 255); /* Colore bianco semi-trasparente */
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 900px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenitore generale del profilo */
+.profile-container {
+    text-align: center;
+}
+
+.profile-container h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ff6347;
+}
+
+.profile-details {
+    text-align: left;
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.profile-details h2,
+.payment-history h2 {
+    color: #555;
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 5px;
+}
+
+.profile-details p {
+    margin: 10px 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+.profile-details p strong {
+    color: #333;
+}
+
+/* Storico pagamenti */
+.payment-history {
+    text-align: left;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.payment-history ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.payment-history li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.payment-history li strong {
+    color: #333;
+}
+
+.payment-history p {
+    margin: 0;
+    color: #666;
+}
+
+.payment-history p {
+    font-style: italic;
+    color: #999;
+}
+
+
+
+.her-section {
+    position: relative;
+    /*background-image: url('../img/garage.jpg');*/
+    background-color: #343a40;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.her-section .h1 {
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ff6347;
+}
+
+
+.her-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);;
+    z-index: 1;
+}
+
+.her-section .content {
+    position: relative;
+    z-index: 2;
+}

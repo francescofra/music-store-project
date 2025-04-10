@@ -1,0 +1,541 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #f8f9fa;
+    color: #333;
+    background-image: url('assets/img/strumenti.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: center; 
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Contenitore principale */
+.container {
+    max-width: 100%;
+    overflow: hidden;
+    margin: auto;
+}
+
+/* Header Styles */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.logo h1 {
+    font-size: 28px;
+    color: #ff6347;
+    margin: 0;
+}
+
+/* Main Navigation */
+.main-nav .nav-list {
+    display: flex;
+    /*gap: 20px;*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav .nav-list li {
+    margin: 0;
+}
+
+.main-nav .nav-list a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 26px 20px;
+    border-radius: 0;
+}
+
+.main-nav .nav-list a:hover {
+    background-color: grey;
+    color: #fff;
+}
+
+/* Utilities (Search Bar, User Access, Cart Icon) */
+.utilities {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 20px 0 0 20px;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-bar button {
+    background-color: #ff6347;
+    border: none;
+    padding: 10px;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar img.search-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
+.search-bar button:hover {
+    background-color: #ff4500;
+}
+
+/* User Access */
+.user-access {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-access img.profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ff6347;
+}
+
+.user-access .login-link {
+    color: #ff6347;
+    font-size: 16px;
+}
+
+.user-access .login-link:hover {
+    color: #ff4500;
+}
+
+/* Cart Icon */
+.cart-icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.cart-icon {
+    width: 35px;
+    cursor: pointer;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    /*background: red;*/
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Popup Carrello */
+#cart-popup {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 280px;
+    background-color: #e8e8e8;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    z-index: 1000;
+    transform: translateX(100%);
+    opacity: 0;
+    max-height: 500px;
+    overflow-y: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#cart-popup.open {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#cart-popup h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#cart-popup .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#cart-popup .cart-item:last-child {
+    border-bottom: none;
+}
+
+#cart-popup .remove-item {
+    cursor: pointer;
+}
+
+#cart-popup .checkout-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#cart-popup .checkout-btn:hover {
+    background-color: #2ecc71;
+}
+
+/* Pulsante chiudi carrello */
+#cart-popup #close-cart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#cart-popup #close-cart:hover {
+    color: #e74c3c;
+}
+
+/* Navbar */
+.navbar, .category-nav {
+    background-color: #444;
+    padding: 10px 20px;
+}
+
+.navbar .nav-list, .category-nav .nav-list {
+    display: flex;
+    justify-content: center;
+    /*gap: 20px;*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-list a, .category-nav .nav-list a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 17px;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-list a:hover, .category-nav .nav-list a:hover {
+    background-color: grey;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    background-image: url('../img/strumenti.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-section .content {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+/* Scritta sopra i prodotti */
+.featured-products-header {
+    margin: 0 !important;
+    padding: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    background-color: #e2e2e2;
+    text-align: left;
+    margin-bottom: 20px;
+    border-left: 5px solid #ff6347;
+    padding-left: 10px;
+}
+
+/* Prodotti */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    background-color: #c5c4c4;
+    padding: 20px;
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    /*margin-bottom: 10px;*/
+}
+
+.product2 img {
+    width: 250px;
+    height: 250px;
+    /*margin-bottom: 10px;*/
+}
+
+.product h3 {
+    font-size: 18px;
+    color: #ff6347;
+}
+
+.product p {
+    margin: 10px 0;
+    font-weight: bold;
+    color: #24cd32;
+}
+
+
+/* Pulsanti */
+button, .add-to-cart {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .add-to-cart:hover {
+    background-color: #ff4500;
+    cursor: pointer;
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-form .form-group {
+    margin-bottom: 15px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-form .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.login-form .btn-login, .login-form .btn-register {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-form .btn-login {
+    background-color: #24cd32;
+    color: white;
+}
+
+.login-form .btn-register {
+    background-color: #6c757d;
+    color: white;
+    text-align: center;
+}
+
+/* Stili per la pagina del carrello */
+.cart-page {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.cart-page h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    border-bottom: 2px solid #ff6347;
+    padding-bottom: 10px;
+}
+
+.cart-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.cart-page th, .cart-page td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+.cart-page th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: bold;
+}
+
+.cart-page td {
+    font-size: 16px;
+    color: #555;
+}
+
+.cart-page .quantity {
+    width: 60px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.cart-page a {
+    color: #ff6347;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.cart-page a:hover {
+    color: #ff4500;
+}
+
+.cart-page .checkout-btn {
+    display: block;
+    margin: 30px auto 0;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #27ae60;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.cart-page .checkout-btn:hover {
+    background-color: #2ecc71;
+}
+
+.cart-page p {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Stili per la pagina del profilo utente */
+
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+
+footer a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff6347; 
+}
